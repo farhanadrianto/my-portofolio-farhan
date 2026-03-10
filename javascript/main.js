@@ -35,13 +35,17 @@ const sendBtn = document.getElementById('sendBtn');
 
 if (sendBtn) {
   sendBtn.addEventListener('click', () => {
-    sendBtn.textContent = '✅ Pesan Terkirim!';
-    sendBtn.style.background = 'var(--accent2)';
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
 
-    setTimeout(() => {
-      sendBtn.textContent = 'Kirim Pesan →';
-      sendBtn.style.background = '';
-    }, 3000);
+    if (!name || !message) {
+      alert('Mohon isi nama dan pesan terlebih dahulu.');
+      return;
+    }
+
+    const nomorWA = '6281233862127'; // ganti dengan nomor WA kamu
+    const text = encodeURIComponent(`Halo Farhan, saya ${name}.\n\n${message}`);
+    window.open(`https://wa.me/${6281233862127}?text=${text}`, '_blank');
   });
 }
 

@@ -186,8 +186,8 @@ section { padding: 8rem 6vw; }
 }
 
 h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -299,6 +299,13 @@ h2 {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, transparent 60%, rgba(108,99,255,0.2));
+}
+
+.about-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .about-deco {
@@ -555,6 +562,12 @@ h2 {
 
 .proj-link:hover { color: var(--accent); }
 
+.proj-link img {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
 /* ========================
    CERTIFICATIONS
 ======================== */
@@ -670,9 +683,14 @@ h2 {
   flex-shrink: 0;
 }
 
+.channel-icon img {
+  width: 24px;
+  height: 24px;
+}
+
 .ch-wa     { background: rgba(37,211,102,0.15); }
 .ch-email  { background: rgba(108,99,255,0.15); }
-.ch-github { background: rgba(255,255,255,0.08); }
+.ch-github { background: rgba(255, 255, 255, 0.918); }
 .ch-linkedin { background: rgba(10,102,194,0.2); }
 
 .channel-info { flex: 1; }
@@ -795,7 +813,7 @@ footer {
 }
 
 /* ========================
-   RESPONSIVE
+   RESPONSIVE - TABLET (max 900px)
 ======================== */
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -805,6 +823,37 @@ footer {
   nav { padding: 1rem 4vw; }
   section { padding: 5rem 4vw; }
   .nav-links { display: none; }
+  .projects-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .certs-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .hero-cta { flex-direction: column; align-items: flex-start; }
+}
+
+/* ========================
+   RESPONSIVE - HP BESAR (max 768px)
+======================== */
+@media (max-width: 768px) {
+  h1 { font-size: clamp(2rem, 6vw, 3rem); }
+  .hero-desc { font-size: 1rem; }
+  .about-deco { display: none; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .contact-form-card { padding: 1.5rem; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+/* ========================
+   RESPONSIVE - HP KECIL (max 480px)
+======================== */
+@media (max-width: 480px) {
+  h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+  section { padding: 4rem 4vw; }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: 1fr; }
+  .skill-card { padding: 1.2rem; }
+  .contact-channels { gap: 0.7rem; }
+  .channel { padding: 1rem; }
+  nav { padding: 0.8rem 4vw; }
 }
 
 @media (max-width: 600px) {
